@@ -21,6 +21,24 @@ This application strictly follows the below architecture
 
 <img src = "https://github.com/kanch231004/News-Feed/blob/master/screenshots/Architecture.png" width = 450 />
 
+# Description of functionalities
+* __MainActivity.kt__: This file handles API network calls in the Android app. It makes an API call and if it is successful, it returns the result which is the Jetpack Components. Otherwise, it logs it out. 
+
+* __NewsApp.kt__: This file defines the Android app and has the @HiltAdroidApp annotation which indicates it is part of its dependency injection setup. It also initializes the Stetho library for debugging.
+
+* __api/Data.kt__: This file provides data for displaying the listings for the user interface. the pagelist holds items for the user to observe and the network state represents the network request status.
+
+* __api/ResponseModel.kt__: Creates classes for the news data that is later going to be displayed. They represent news articles, their sources, and the news API's response data.
+
+* __api/Status.kt__: Has subclasses that represent the different network states in the app.
+
+# Running the program
+1. Install Kotlin through https://kotlinlang.org/docs/tutorials/command-line.html
+2. Clone this repository
+3. Compile in terminal using this command
+`kotlinc MainActivity.kt -include-runtime -d MainActivity.jar`
+4. Run the JAR file `java -jar MainActivity.jar`
+
 # API Key
 Get your api key from here https://newsapi.org/
 
